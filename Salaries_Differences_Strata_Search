@@ -1,0 +1,10 @@
+# Importing libraries
+import pandas as pd
+
+#Displaying the dataframe : 
+x=pd.merge(db_employee, db_dept, how='left', left_on=['department_id'], right_on=['id'])
+
+#Displaying the data frame
+# x.head(5)
+
+x['salary'][x['department'] == 'marketing'].max()-x['salary'][x['department'] == 'engineering'].max()
