@@ -1,0 +1,11 @@
+# Import your libraries
+import pandas as pd
+
+# Start writing code
+# ms_employee_salary.head(10)
+
+ms_employee_salary['rank_seller_by_salary'] = ms_employee_salary.groupby('id')['salary'].rank(ascending=False)
+
+x=ms_employee_salary[ms_employee_salary['rank_seller_by_salary']==1]
+
+x=x.drop(['rank_seller_by_salary'],axis=1)
