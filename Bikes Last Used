@@ -6,3 +6,7 @@ import pandas as pd
 
 # Displaying the for
 dc_bikeshare_q1_2012.groupby(['bike_number'])['end_time'].max().reset_index()
+
+#or
+dc_bikeshare_q1_2012.groupby(['bike_number'])['end_time'].rank(ascending=False)
+
