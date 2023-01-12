@@ -1,0 +1,9 @@
+# Import your libraries
+import pandas as pd
+
+# Start writing code
+# facebook_reactions.head(10)
+
+x=facebook_reactions[facebook_reactions['reaction']=='heart']['post_id'].unique()
+
+facebook_posts[facebook_posts['post_id'] == x[0]]
