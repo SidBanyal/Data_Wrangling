@@ -1,0 +1,10 @@
+# Import your libraries
+import pandas as pd
+# first_name order_date, order_details and total_order_cost
+
+# Start writing code
+# customers.head()
+# orders.head()
+
+x=pd.merge(orders,customers,how='left',left_on=['cust_id'],right_on=['id'])
+x[['first_name','order_date','order_details','total_order_cost']][x['first_name'].isin(['Eva','Jill'])]
