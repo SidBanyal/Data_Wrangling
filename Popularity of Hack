@@ -1,0 +1,12 @@
+# Import your libraries
+import pandas as pd
+
+# Start writing code
+# facebook_employees.head()
+
+# avg pop per office location
+
+a=pd.merge(facebook_employees,facebook_hack_survey,
+how='left', left_on=['id'], right_on=['employee_id'])
+
+a.groupby('location')['popularity'].mean().reset_index()
