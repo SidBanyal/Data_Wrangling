@@ -1,0 +1,10 @@
+# Import your libraries
+import pandas as pd
+
+# Start writing code
+# yelp_business.head()
+
+# yelp_business.groupby('name')['review_count']
+
+x=yelp_business.sort_values(by=['review_count'], ascending=False)
+y=x[['name','review_count']].head(5)
