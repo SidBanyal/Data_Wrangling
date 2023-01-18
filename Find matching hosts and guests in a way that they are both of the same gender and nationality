@@ -1,0 +1,8 @@
+# Import your libraries
+import pandas as pd
+import numpy as np
+# Start writing code
+airbnb_hosts.head
+
+x=pd.merge(airbnb_hosts,airbnb_guests,on=['nationality','gender'])[['host_id', 'guest_id']]
+x[['host_id','guest_id']].drop_duplicates()
