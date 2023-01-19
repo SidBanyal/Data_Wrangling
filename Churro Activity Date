@@ -1,0 +1,8 @@
+# Import your libraries
+import pandas as pd
+
+# Start writing code
+# los_angeles_restaurant_health_inspections.head()
+df=los_angeles_restaurant_health_inspections
+df['activity_date'] = pd.to_datetime(df['activity_date']).dt.date
+df[df['score']<95 ][df['facility_name']=='STREET CHURROS'][['activity_date','pe_description']].head(5)
