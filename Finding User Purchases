@@ -1,0 +1,20 @@
+# Import your libraries
+import pandas as pd
+
+# Start writing code
+amazon_transactions.head()
+
+#Selecting the relevant columns
+df1=amazon_transactions[['id','user_id','created_at']]
+
+#Left join 
+df2=pd.merge(df1,df1, on='user_id', how='left')
+
+#Ensuring there are no same id's
+df2= df2[df2['id_x']!= df2['id_y']]
+
+#Calulating the difference
+df2['days'] = (abs(df2['created_at_x'] - df2['created_at_y'])).dt.days
+
+#Displying the unique id's
+fin['0']=df2['user_id'][df2['days']<8].unique()
