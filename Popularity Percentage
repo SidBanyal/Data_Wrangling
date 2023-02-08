@@ -1,0 +1,15 @@
+# Import your libraries
+import pandas as pd
+
+# Start writing code
+facebook_friends.head()
+
+# drop duplicated rows
+occurrences = pd.concat(
+    (
+        facebook_friends.user1,
+        facebook_friends.user2,
+    )
+)
+num_users = occurrences.nunique()
+occurrences.value_counts().div(num_users).mul(100).sort_index()
