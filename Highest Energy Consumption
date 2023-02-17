@@ -1,0 +1,16 @@
+import pandas as pd
+
+# Creating a frame object
+frames = [fb_eu_energy,fb_asia_energy,fb_na_energy]
+
+# Concating all the data Frames
+result=pd.merge(frames)
+
+# Grouping the data
+result=result.groupby('date')['consumption'].sum().reset_index()
+
+# Ranking the result
+result['rank']=result['consumption'].rank(method='dense', ascending=Flase)
+
+# Selecting the Top 1 rank
+result[result['rank']==1]
