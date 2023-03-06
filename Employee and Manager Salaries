@@ -1,0 +1,14 @@
+# Import your libraries
+import pandas as pd
+
+# Start writing code
+employee.head()
+
+#Find employees who are earning more than their managers. Output the employee's first name
+# along with the corresponding salary.
+
+df=employee[['id','first_name','salary','manager_id']]
+df2=pd.merge(df,df, how='left', left_on='manager_id',right_on ='id')
+df2=df2[df2['salary_x']>df2['salary_y']]
+df2[['first_name_x','salary_x']]
+
