@@ -1,0 +1,6 @@
+import pandas as pd
+
+df1['cat']=df['categories'].str.splt(';')
+df=df[['cat','review_count']]
+df=df.explode('cat')
+df.groupby('cat').sum('review_count').reset_index()s
