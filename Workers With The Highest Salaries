@@ -1,0 +1,11 @@
+# Import your libraries
+import pandas as pd
+
+# Megre the dataset
+df= pd.merge(worker,title, left_on=['worker_id'],right_on=['worker_ref_id'],how='left')
+
+# Filter the columns
+x=df[['salary','worker_title']]
+x['rank']=x.salary.rank(method='dense',ascending =False)
+x=x.sort_values(by=['rank'], ascending= True)
+x['worker_title'][x['rank']==1]
